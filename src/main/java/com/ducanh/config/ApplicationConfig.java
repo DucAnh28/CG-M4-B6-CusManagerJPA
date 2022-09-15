@@ -1,7 +1,9 @@
 package com.ducanh.config;
 
 import com.ducanh.repository.customer.CustomerRepo;
-import com.ducanh.repository.customer.ICutomerRepo;
+import com.ducanh.repository.procedure.CustomerRepoSP;
+import com.ducanh.repository.procedure.ICustomerRepoSP;
+import com.ducanh.repository.customer.ICustomerRepo;
 import com.ducanh.service.customer.CustomerService;
 import com.ducanh.service.customer.ICustomerService;
 import org.springframework.beans.BeansException;
@@ -115,12 +117,17 @@ public class ApplicationConfig implements WebMvcConfigurer, ApplicationContextAw
     }
 
     @Bean
-    public ICutomerRepo customerRepository() {
+    public ICustomerRepo customerRepository() {
         return new CustomerRepo();
     }
 
     @Bean
     public ICustomerService customerService() {
         return new CustomerService();
+    }
+
+    @Bean
+    public ICustomerRepoSP customerRepoSP(){
+        return new CustomerRepoSP();
     }
 }

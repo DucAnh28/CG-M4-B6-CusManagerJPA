@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Transactional
-public class CustomerRepo implements ICutomerRepo {
+public class CustomerRepo implements ICustomerRepo {
     @PersistenceContext
     private EntityManager em;
 
